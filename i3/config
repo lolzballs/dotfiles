@@ -1,0 +1,203 @@
+exec udiskie
+exec nm-applet
+exec feh --bg-center /home/bcheng/usr/photos/wallpaper.jpg
+
+for_window [class="crx_hmjkmjkepdijhoojdojkdfohbdgmmhki"] floating enable
+
+# Mod4 = Win
+set $mod Mod4
+set $alt Mod1
+
+# Font for window titles.
+font pango:Fira Mono 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Colors and look
+#gaps inner 12
+#gaps outer 8
+new_window pixel 0
+new_float pixel 1
+
+#class                  background	border		text		split
+client.focused          #928374		#928374		#1d2021		#dbae93
+client.focused_inactive #1d2021		#282828 	#665c54		#1d2021
+client.unfocused        #1d2021		#282828 	#665c54		#1d2021
+client.urgent           #d3869b		#d3869b		#665c54		#b16286
+client.background       #282828
+
+exec_always --no-startup-id /home/bcheng/.config/polybar/launch.sh
+#bar {
+#    i3bar_command /home/bcheng/.config/i3/bar/bar.sh
+#    status_command i3status
+#    tray_output primary
+#    position top
+#}
+
+smart_gaps on
+smart_borders on
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+space exec rofi -show drun
+
+bindsym $mod+n exec thunar
+
+bindsym $mod+p exec rofi-pass
+
+# lock screen
+bindsym $mod+b exec i3lock-fancy
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move workspace
+bindsym $mod+Left move workspace to output left
+bindsym $mod+Right move workspace to output right 
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+c split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+bindsym $mod+Shift+w exec xfce4-screenshooter -r -i
+
+# bind workspaces to monitors
+workspace 11 output LVDS
+workspace 12 output LVDS
+workspace 13 output LVDS
+workspace 14 output LVDS
+workspace 15 output LVDS
+workspace 16 output LVDS
+workspace 17 output LVDS
+workspace 18 output LVDS
+workspace 19 output LVDS
+workspace 20 output LVDS
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+Ctrl+1 workspace 11
+bindsym $mod+Ctrl+2 workspace 12
+bindsym $mod+Ctrl+3 workspace 13
+bindsym $mod+Ctrl+4 workspace 14
+bindsym $mod+Ctrl+5 workspace 15
+bindsym $mod+Ctrl+6 workspace 16
+bindsym $mod+Ctrl+7 workspace 17
+bindsym $mod+Ctrl+8 workspace 18
+bindsym $mod+Ctrl+9 workspace 19
+bindsym $mod+Ctrl+0 workspace 20
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Ctrl+Shift+1 move container to workspace 11
+bindsym $mod+Ctrl+Shift+2 move container to workspace 12
+bindsym $mod+Ctrl+Shift+3 move container to workspace 13
+bindsym $mod+Ctrl+Shift+4 move container to workspace 14
+bindsym $mod+Ctrl+Shift+5 move container to workspace 15
+bindsym $mod+Ctrl+Shift+6 move container to workspace 16
+bindsym $mod+Ctrl+Shift+7 move container to workspace 17
+bindsym $mod+Ctrl+Shift+8 move container to workspace 18
+bindsym $mod+Ctrl+Shift+9 move container to workspace 19
+bindsym $mod+Ctrl+Shift+0 move container to workspace 20
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+default_orientation auto
