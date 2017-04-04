@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 
@@ -17,6 +18,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'mattn/emmet-vim'
 Plugin 'lambdatoast/elm.vim'
+
+Plugin 'lervag/vimtex'
 
 Plugin 'Valloric/YouCompleteMe'
 
@@ -40,6 +43,8 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_rust_src_path = '/home/bcheng/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 
 let g:rustfmt_autosave = 1
+
+let g:vimtex_view_method = 'zathura'
 
 let g:ctrlp_custom_ignore = 'node_modules\|target'
 
