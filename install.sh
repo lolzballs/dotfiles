@@ -8,8 +8,6 @@ xrdb $HOME/.Xresources
 
 ln -s $DIR/compton.conf $HOME/.config/compton.conf
 
-ln -s $DIR/profile $HOME/.profile
-
 ln -s $DIR/termite $HOME/.config/termite
 
 ln -s $DIR/polybar $HOME/.config/polybar
