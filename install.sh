@@ -6,6 +6,8 @@ ln -s $DIR/vimrc $HOME/.vimrc
 ln -s $DIR/Xresources $HOME/.Xresources
 xrdb $HOME/.Xresources
 
+ln -s $DIR/compton.conf $HOME/.config/compton.conf
+
 ln -s $DIR/profile $HOME/.profile
 
 ln -s $DIR/termite $HOME/.config/termite
