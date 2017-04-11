@@ -54,7 +54,7 @@ monitor = ${env:MONITOR:eDP-1}
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = systemspace s wlan eth s memory cpu s battery volume s date
+modules-right = systemspace s wlan s memory cpu s battery volume s date
 
 tray-position = right
 tray-padding = 2
@@ -146,7 +146,7 @@ label = %gb_used%
 [module/wlan]
 inherit = module/theme
 type = internal/network
-interface = wlo1
+interface = wlp2s0
 interval = 1
 
 format-connected = <label-connected>
@@ -165,21 +165,6 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground}
 
-[module/eth]
-inherit = module/theme
-type = internal/network
-interface = eth0
-interval = 3.0
-
-format-connected-underline = #b8bb26
-format-connected-prefix = " "
-format-connected-foreground-foreground = ${colors.foreground}
-label-connected = %local_ip%
-
-format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground}
-
 [module/date]
 inherit = module/theme
 type = internal/date
@@ -194,18 +179,56 @@ format-underline = ${colors.foreground}
 label = %date% %time%
 
 [module/battery]
-inherit = module/theme
 type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 99
 
+format-padding = 2
+
 time-format = %H:%M
-label-discharging = %percentage%% %time%
-format-underline = ${colors.red}
+
+format-charging-padding = ${self.format-padding}
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.green}
+
+format-discharging-padding = ${self.format-padding}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+label-discharging = "%percentage%% %time%"
+
+format-full-padding = ${self.format-padding}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
 
 [module/volume]
 type = internal/volume
 master-soundcard = default
-speaker-mixer = Speaker
+master-mixer = Master
+
+mapping = true
+
+format-background = ${colors.background}
+label-volume = " %percentage%%"
+label-volume-padding = 2
+label-volume-underline = ${colors.blue}
+label-muted = "  %percentage%%"
+label-muted-padding = 2
+label-muted-underline = ${colors.red}
 ; vim:ft=dosini
