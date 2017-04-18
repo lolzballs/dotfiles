@@ -54,6 +54,16 @@ bindsym $mod+p exec rofi-pass
 # lock screen
 bindsym $mod+b exec i3lock-fancy
 
+workspace 11 output eDP-1-1
+workspace 12 output eDP-1-1
+workspace 13 output eDP-1-1
+workspace 14 output eDP-1-1
+workspace 15 output eDP-1-1
+workspace 16 output eDP-1-1
+workspace 17 output eDP-1-1
+workspace 18 output eDP-1-1
+workspace 19 output eDP-1-1
+workspace 20 output eDP-1-1
 
 # change focus
 bindsym $mod+h focus left
@@ -101,18 +111,6 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 bindsym $mod+Shift+w exec xfce4-screenshooter -r -i
-
-# bind workspaces to monitors
-workspace 11 output LVDS
-workspace 12 output LVDS
-workspace 13 output LVDS
-workspace 14 output LVDS
-workspace 15 output LVDS
-workspace 16 output LVDS
-workspace 17 output LVDS
-workspace 18 output LVDS
-workspace 19 output LVDS
-workspace 20 output LVDS
 
 # switch to workspace
 bindsym $mod+1 workspace 1

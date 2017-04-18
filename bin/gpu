@@ -1,0 +1,37 @@
+#!/bin/sh
+
+dank=$(cat /proc/acpi/bbswitch)
+
+if [ "$1" == "on" ]
+then
+    if [[ $dank == *"OFF"* ]]; then
+        echo ON | sudo tee /proc/acpi/bbswitch
+    fi
+fi
+
+if [ "$1" == "off" ]
+then
+    if [[ $dank == *"ON"* ]]; then
+        echo OFF | sudo tee /proc/acpi/bbswitch
+    fi
+fi
+
+if [ "$1" == "modprobe" ]
+then
+    if ! ($(lsmod | grep -q 'nvidia_drm')); then
+        sudo modprobe nvidia-drm
+    fi
+fi
+
+if [ "$1" == "rmmod" ]
+then
+    if ($(lsmod | grep -q 'nvidia_drm')); then
+        sudo rmmod nvidia-drm
+        gpu off
+    fi
+fi
+
+if [ "$1" == "status" ]
+then
+    echo $dank
+fi

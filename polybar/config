@@ -41,15 +41,17 @@ font-1 = FontAwesome:pixelsize=11;2
 
 [bar/secondary]
 inherit = bar/base
-monitor = ${env:MONITOR:DisplayPort-2}
+monitor = ${env:MONITOR:HDMI-1}
+monitor-fallback = ${env:MONITOR:HDMI-1-1}
 monitor-strict = true
 
 modules-left = i3 xwindow
-modules-right = memory cpu s date
+modules-right = date
 
 [bar/main]
 inherit = bar/base
 monitor = ${env:MONITOR:eDP-1}
+monitor-fallback = ${env:MONITOR:eDP-1-1}
 # monitor = ${env:MONITOR:DisplayPort-2}
 
 modules-left = i3 xwindow
@@ -171,7 +173,7 @@ type = internal/date
 interval = 1
 
 time = "%a - %d.%m.%Y - %H:%M:%S"
-time-alt = "%a - %d.%m.%Y - %I:%M %p"
+#time-alt = "%a - %d.%m.%Y - %I:%M %p"
 
 format-prefix = " "
 format-underline = ${colors.foreground}
