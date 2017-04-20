@@ -39,19 +39,11 @@ module-margin-right = 1
 font-0 = FiraMono:pixelsize=11;2
 font-1 = FontAwesome:pixelsize=11;2
 
-[bar/secondary]
-inherit = bar/base
-monitor = ${env:MONITOR:HDMI-1}
-monitor-fallback = ${env:MONITOR:HDMI-1-1}
-monitor-strict = true
-
-modules-left = i3 xwindow
-modules-right = date
-
 [bar/main]
 inherit = bar/base
-monitor = ${env:MONITOR:eDP-1}
-monitor-fallback = ${env:MONITOR:eDP-1-1}
+monitor=${env:MONITOR}
+# monitor = ${env:MONITOR:eDP-1}
+# monitor-fallback = ${env:MONITOR:eDP-1-1}
 # monitor = ${env:MONITOR:DisplayPort-2}
 
 modules-left = i3 xwindow
