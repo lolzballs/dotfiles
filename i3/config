@@ -1,4 +1,5 @@
 exec udiskie
+exec compton
 exec nm-applet
 exec feh --bg-center /home/bcheng/usr/photos/wallpaper.jpg
 
@@ -52,6 +53,7 @@ bindsym $mod+n exec thunar
 bindsym $mod+p exec rofi-pass
 
 # lock screen
+bindsym $mod+shift+b exec "sm && i3lock-fancy"
 bindsym $mod+b exec i3lock-fancy
 
 workspace 11 output eDP-1-1
@@ -163,6 +165,14 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+mode "fuck" {
+        bindsym Escape mode "default"
+        bindsym Return mode "default"
+
+        bindsym a exec "i3lock -i ~/usr/photos/lock-N\ ≤\ 2000.png"
+        bindsym j exec "i3lock -i ~/usr/photos/lock-@jackyliao123.png"
+}
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -185,6 +195,7 @@ mode "resize" {
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym f mode "fuck"
 }
 
 bindsym $mod+r mode "resize"
@@ -202,3 +213,4 @@ bindsym XF86MonBrightnessUp exec "light -A 5"
 bindsym XF86MonBrightnessDown exec "light -U 5"
 
 default_orientation auto
+bindsym $mod+m exec "sm"

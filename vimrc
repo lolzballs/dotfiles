@@ -17,7 +17,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'mattn/emmet-vim'
-Plugin 'lambdatoast/elm.vim'
+Plugin 'posva/vim-vue'
 
 Plugin 'lervag/vimtex'
 

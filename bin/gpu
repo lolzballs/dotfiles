@@ -11,6 +11,7 @@ fi
 
 if [ "$1" == "off" ]
 then
+    gpu rmmod
     if [[ $dank == *"ON"* ]]; then
         echo OFF | sudo tee /proc/acpi/bbswitch
     fi
@@ -25,9 +26,11 @@ fi
 
 if [ "$1" == "rmmod" ]
 then
-    if ($(lsmod | grep -q 'nvidia_drm')); then
-        sudo rmmod nvidia-drm
-        gpu off
+    if ($(lsmod | grep -q 'nvidia')); then
+        sudo rmmod nvidia_drm
+        sudo rmmod nvidia_modeset
+        sudo rmmod nvidia_uvm
+        sudo rmmod nvidia
     fi
 fi
 
