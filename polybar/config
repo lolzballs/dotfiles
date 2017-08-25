@@ -3,9 +3,9 @@ margin-top = 5
 margin-bottom = 5
 
 [colors]
-background = #ff1d2021
-background-light = #ff282828
-background-soft = #ff32302f
+background = #aa1d2021
+background-light = #aa282828
+background-soft = #aa32302f
 foreground = #ffebdbb2
 
 red = #ffcc241d

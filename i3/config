@@ -1,7 +1,7 @@
 exec udiskie
 exec compton
 exec nm-applet
-exec feh --bg-center /home/bcheng/usr/photos/wallpaper.jpg
+exec feh --bg-fill /home/bcheng/usr/photos/wallpaper.jpg
 
 for_window [class="crx_hmjkmjkepdijhoojdojkdfohbdgmmhki"] floating enable
 
@@ -16,8 +16,8 @@ font pango:Fira Mono 10
 floating_modifier $mod
 
 # Colors and look
-#gaps inner 12
-#gaps outer 8
+gaps inner 4
+gaps outer 4
 new_window pixel 0
 new_float pixel 1
 
@@ -36,7 +36,8 @@ exec_always --no-startup-id /home/bcheng/.config/polybar/launch.sh
 #    position top
 #}
 
-#smart_gaps on
+workspace 20 gaps outer 16
+smart_gaps on
 #smart_borders on
 
 # start a terminal
