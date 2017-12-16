@@ -20,6 +20,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
 
 Plugin 'lervag/vimtex'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 Plugin 'Valloric/YouCompleteMe'
 
