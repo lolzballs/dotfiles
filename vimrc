@@ -23,6 +23,8 @@ Plugin 'lervag/vimtex'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
+Plugin 'junegunn/goyo.vim'
+
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -55,7 +57,7 @@ set tabstop=4 shiftwidth=4 expandtab
 
 if has('gui_running')
     set guioptions=0
-    set guifont=Fira\ Mono\ 13
+    set guifont=Monospace\ 13
     set guiheadroom=0
 endif
 

@@ -21,6 +21,22 @@ gaps outer 4
 new_window pixel 0
 new_float pixel 1
 
+set $bg #282828
+set $darkred #cc241d
+set $darkgreen #98971a
+set $darkyellow #d79921
+set $darkblue #458588
+set $darkpurple #b16286
+set $darkaqua #689d6a
+set $red #fb4934
+set $green #b8bb26
+set $yellow #fabd2f
+set $blue #83a598
+set $purple #d3869b
+set $aqua #8ec07c
+set $fg #ebdbb2
+set $gray #928374
+
 #class                  background	border		text		split
 client.focused          #928374		#928374		#1d2021		#dbae93
 client.focused_inactive #1d2021		#282828 	#665c54		#1d2021
@@ -56,17 +72,6 @@ bindsym $mod+p exec rofi-pass
 # lock screen
 bindsym $mod+shift+b exec "sm && i3lock-fancy"
 bindsym $mod+b exec i3lock-fancy
-
-workspace 11 output eDP-1-1
-workspace 12 output eDP-1-1
-workspace 13 output eDP-1-1
-workspace 14 output eDP-1-1
-workspace 15 output eDP-1-1
-workspace 16 output eDP-1-1
-workspace 17 output eDP-1-1
-workspace 18 output eDP-1-1
-workspace 19 output eDP-1-1
-workspace 20 output eDP-1-1
 
 # change focus
 bindsym $mod+h focus left
