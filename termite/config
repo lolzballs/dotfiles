@@ -1,5 +1,5 @@
 [options]
-font = Monospace 13
+font = Hack 13
 
 [colors]
 # hard contrast: background = #1d2021

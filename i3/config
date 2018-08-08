@@ -118,7 +118,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-bindsym $mod+Shift+w exec xfce4-screenshooter -r -i
+bindsym $mod+Shift+w exec maim -s | xclip -selection clipboard -t image/png
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -206,9 +206,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 2%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 2%-
+bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioRaiseVolume exec pamixer -i 2
+bindsym XF86AudioLowerVolume exec pamixer -d 2
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause

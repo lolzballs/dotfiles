@@ -48,7 +48,7 @@ monitor=${env:MONITOR}
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = systemspace s wlan s memory cpu s battery volume s date
+modules-right = systemspace memory cpu battery pulseaudio date
 
 tray-position = right
 tray-padding = 2
@@ -211,10 +211,8 @@ animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
-[module/volume]
-type = internal/volume
-master-soundcard = default
-master-mixer = Master
+[module/pulseaudio]
+type = internal/pulseaudio
 
 mapping = true
 
