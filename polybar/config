@@ -98,7 +98,7 @@ label-urgent-background = ${colors.nord11}
 label-urgent-padding = 2
 
 label-visible = %index%
-label-visible-background = ${colors.nord3}
+label-visible-foreground = ${colors.nord3}
 label-visible-padding = 2
 
 [module/systemspace]
