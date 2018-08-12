@@ -1,60 +1,50 @@
-exec udiskie
+exec udiskie -2
 exec compton
 exec nm-applet
 exec feh --bg-fill /home/bcheng/usr/photos/wallpaper.jpg
+exec xss-lock -- /home/bcheng/bin/i3lock-fancy
 
-for_window [class="crx_hmjkmjkepdijhoojdojkdfohbdgmmhki"] floating enable
+exec_always --no-startup-id /home/bcheng/.config/polybar/launch.sh
 
 # Mod4 = Win
 set $mod Mod4
 set $alt Mod1
 
 # Font for window titles.
-font pango:Fira Mono 10
+font pango:Hack 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # Colors and look
-gaps inner 4
-gaps outer 4
-new_window pixel 0
-new_float pixel 1
+gaps inner 8
+gaps outer 8
+smart_borders no_gaps
+for_window [class="^.*"] border pixel 5
 
-set $bg #282828
-set $darkred #cc241d
-set $darkgreen #98971a
-set $darkyellow #d79921
-set $darkblue #458588
-set $darkpurple #b16286
-set $darkaqua #689d6a
-set $red #fb4934
-set $green #b8bb26
-set $yellow #fabd2f
-set $blue #83a598
-set $purple #d3869b
-set $aqua #8ec07c
-set $fg #ebdbb2
-set $gray #928374
+set $nord0 #2E3440
+set $nord1 #3B4252
+set $nord2 #434C5E
+set $nord3 #4C566A
+set $nord4 #D8DEE9
+set $nord5 #E5E9F0
+set $nord6 #ECEFF4
+set $nord7 #8FBCBB
+set $nord8 #88C0D0
+set $nord9 #81A1C1
+set $nord10 #5E81AC
+set $nord11 #BF616A
+set $nord12 #D08770
+set $nord13 #EBCB8B
+set $nord14 #A3BE8C
+set $nord15 #B48EAD
 
 #class                  background	border		text		split
-client.focused          #928374		#928374		#1d2021		#dbae93
-client.focused_inactive #1d2021		#282828 	#665c54		#1d2021
-client.unfocused        #1d2021		#282828 	#665c54		#1d2021
-client.urgent           #d3869b		#d3869b		#665c54		#b16286
-client.background       #282828
-
-exec_always --no-startup-id /home/bcheng/.config/polybar/launch.sh
-#bar {
-#    i3bar_command /home/bcheng/.config/i3/bar/bar.sh
-#    status_command i3status
-#    tray_output primary
-#    position top
-#}
-
-workspace 20 gaps outer 16
-smart_gaps on
-#smart_borders on
+client.focused          $nord3		$nord2		$nord4		$nord9
+client.focused_inactive $nord3		$nord1      $nord4		$nord9
+client.unfocused        $nord3		$nord1      $nord4		$nord9
+client.urgent           $nord6		$nord11     $nord4		$nord9
+client.background       $nord3
 
 # start a terminal
 bindsym $mod+Return exec termite
@@ -66,8 +56,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+space exec rofi -show drun
 
 bindsym $mod+n exec thunar
-
-bindsym $mod+p exec rofi-pass
 
 # lock screen
 bindsym $mod+shift+b exec "sm && i3lock-fancy"
@@ -220,3 +208,4 @@ bindsym XF86MonBrightnessDown exec "light -U 5"
 
 default_orientation auto
 bindsym $mod+m exec "sm"
+

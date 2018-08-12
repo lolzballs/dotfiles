@@ -5,7 +5,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'morhetz/gruvbox'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'vim-airline/vim-airline'
 
 Plugin 'tpope/vim-repeat'
@@ -67,6 +67,6 @@ set laststatus=2
 set relativenumber
 set number
 
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 

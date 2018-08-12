@@ -3,32 +3,42 @@ margin-top = 5
 margin-bottom = 5
 
 [colors]
-background = #aa1d2021
-background-light = #aa282828
-background-soft = #aa32302f
-foreground = #ffebdbb2
-
-red = #ffcc241d
-green = #ffb8bb26
-yellow = #fffabd2f
-blue = #ff83a598
+nord0 =  #2E3440
+nord1 =  #3B4252
+nord2 =  #434C5E
+nord3 =  #4C566A
+nord4 =  #D8DEE9
+nord5 =  #E5E9F0
+nord6 =  #ECEFF4
+nord7 =  #8FBCBB
+nord8 =  #88C0D0
+nord9 =  #81A1C1
+nord10 = #5E81AC
+nord11 = #BF616A
+nord12 = #D08770
+nord13 = #EBCB8B
+nord14 = #A3BE8C
+nord15 = #B48EAD
 
 [bar/base]
 bottom = false
 wm-restack = i3
 
 width = 100%
-height = 24
+height = 32
 offset-x = 0
 offset-y = 0
+border-left-size = 16
+border-right-size = 16
+border-top-size = 16
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.nord0}
+foreground = ${colors.nord4}
 
-overline-size = 2
-overline-color = #f00
+# overline-size = 2
+# overline-color = #f00
 underline-size = 2
-underline-color = ${colors.blue}
+underline-color = ${colors.nord8}
 
 spacing = 1
 padding-left = 0
@@ -52,14 +62,17 @@ modules-right = systemspace memory cpu battery pulseaudio date
 
 tray-position = right
 tray-padding = 2
-tray-background = ${colors.background}
+tray-background = ${colors.nord1}
+
+[module/theme]
+format-padding = 2
+format-background = ${colors.nord1}
+format-foreground = ${colors.nord4}
 
 [module/xwindow]
 type = internal/xwindow
+inherit = module/theme
 label = %title:0:30:...%
-format-padding = 2
-format-background = ${colors.background-soft}
-format-underline = ${colors.foreground}
 
 [module/i3]
 type = internal/i3
@@ -69,158 +82,102 @@ pin-workspaces = true
 
 label-mode = %mode%
 label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.background}
+label-mode-foreground = ${colors.nord4}
+label-mode-background = ${colors.nord3}
 
 label-focused = %index%
-label-focused-background = ${colors.background-light}
-label-focused-underline = ${colors.foreground}
+label-focused-background = ${colors.nord1}
 label-focused-padding = 2
 
 label-unfocused = %index%
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = ${colors.nord3}
 label-unfocused-padding = 2
 
 label-urgent = %index%
-label-urgent-background = ${colors.red}
+label-urgent-background = ${colors.nord11}
 label-urgent-padding = 2
 
 label-visible = %index%
-label-visible-background = ${colors.background-soft}
+label-visible-background = ${colors.nord3}
 label-visible-padding = 2
 
-[module/theme]
-format-background = ${colors.background}
-format-padding = 2
-format-foreground = ${self.format-underline}
-
-format-connected-background = ${module/theme.format-background}
-format-unconnected-background = ${module/theme.format-background}
-format-mounted-background = ${module/theme.format-background}
-format-unmounted-background = ${module/theme.format-background}
-format-charging-background = ${module/theme.format-background}
-format-discharging-background = ${module/theme.format-background}
-
-format-connected-padding = ${module/theme.format-padding}
-format-unconnected-padding = ${module/theme.format-padding}
-format-mounted-padding = ${module/theme.format-padding}
-format-unmounted-padding = ${module/theme.format-padding}
-format-charging-padding = ${module/theme.format-padding}
-format-discharging-padding = ${module/theme.format-padding}
-
-format-mounted-foreground = ${self.format-mounted-underline}
-format-unmounted-foreground = ${self.format-unmounted-underline}
-
 [module/systemspace]
-inherit = module/theme
 type = internal/fs
+inherit = module/theme
 interval = 20
 mount-0 = /
 label-mounted = " %free%"
-label-unmounted = " ??"
-format-mounted-underline = ${colors.blue}
-format-unmounted-underline = ${colors.red}
+label-mounted-padding = ${self.format-padding}
+label-mounted-background = ${self.format-background}
 
 [module/cpu]
-inherit = module/theme
 type = internal/cpu
+inherit = module/theme
 interval = 2
 format-prefix = " "
-format-underline = ${colors.red}
 label = %percentage%%
 
 [module/memory]
-inherit = module/theme
 type = internal/memory
+inherit = module/theme
 interval = 2
 format-prefix = " "
-format-underline = ${colors.yellow}
 label = %gb_used%
 
-[module/wlan]
-inherit = module/theme
-type = internal/network
-interface = wlp2s0
-interval = 1
-
-format-connected = <label-connected>
-format-connected-underline = ${colors.blue}
-format-disconnected-underline = ${colors.red}
-
-label-connected = " %signal% [  %downspeed% ] [  %upspeed% ]"
-label-disconnected = "OFFLINE"
-label-connected-foreground = ${colors.green}
-label-disconnected-foreground = ${colors.red}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground}
-
 [module/date]
-inherit = module/theme
 type = internal/date
+inherit = module/theme
 interval = 1
-
-time = "%a - %d.%m.%Y - %H:%M:%S"
-#time-alt = "%a - %d.%m.%Y - %I:%M %p"
-
+time = "%a - %Y.%m.%d - %H:%M:%S"
 format-prefix = " "
-format-underline = ${colors.foreground}
-
 label = %date% %time%
 
 [module/battery]
 type = internal/battery
+inherit = module/theme
 battery = BAT0
 adapter = AC
 full-at = 99
 
-format-padding = 2
-
 time-format = %H:%M
 
-format-charging-padding = ${self.format-padding}
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.green}
+format-charging-padding = ${self.format-padding}
+format-charging-background = ${self.format-background}
 
-format-discharging-padding = ${self.format-padding}
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging-padding = ${self.format-padding}
+format-discharging-background = ${self.format-backgroundfull
 label-discharging = "%percentage%% %time%"
 
-format-full-padding = ${self.format-padding}
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${self.format-charging-underline}
+format-full-padding = ${self.format-padding}
+format-full-background = ${self.format-background}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/pulseaudio]
 type = internal/pulseaudio
+inherit = module/theme
 
 mapping = true
 
-format-background = ${colors.background}
 label-volume = " %percentage%%"
-label-volume-padding = 2
-label-volume-underline = ${colors.blue}
+label-volume-padding = ${self.format-padding}
+label-volume-background = ${self.format-background}
 label-muted = "  %percentage%%"
-label-muted-padding = 2
-label-muted-underline = ${colors.red}
+label-muted-padding = ${self.format-padding}
+label-muted-background = ${colors.nord9}
+
 ; vim:ft=dosini
