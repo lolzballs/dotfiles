@@ -23,5 +23,6 @@ rofi.color-normal:                   nord0,nord4,nord0,nord0,nord9
 rofi.color-urgent:                   nord6,nord1,nord6,nord6,nord9
 rofi.color-active:                   nord3,nord4,nord3,nord3,nord9
 rofi.color-window:                   nord0,nord2,nord0
+rofi.bw:                             4
 rofi.modi:                           drun
 
