@@ -143,16 +143,16 @@ time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = ${self.format-padding}
-format-charging-background = ${self.format-background}
+format-charging-background = ${colors.nord1}
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-padding = ${self.format-padding}
-format-discharging-background = ${self.format-backgroundfull
+format-discharging-background = ${colors.nord1}
 label-discharging = "%percentage%% %time%"
 
 format-full-prefix = " "
 format-full-padding = ${self.format-padding}
-format-full-background = ${self.format-background}
+format-full-background = ${colors.nord1}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -178,6 +178,6 @@ label-volume-padding = ${self.format-padding}
 label-volume-background = ${self.format-background}
 label-muted = "  %percentage%%"
 label-muted-padding = ${self.format-padding}
-label-muted-background = ${colors.nord9}
+label-muted-background = ${colors.nord11}
 
 ; vim:ft=dosini

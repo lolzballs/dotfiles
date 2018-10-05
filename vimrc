@@ -57,7 +57,7 @@ set tabstop=4 shiftwidth=4 expandtab
 
 if has('gui_running')
     set guioptions=0
-    set guifont=Monospace\ 13
+    set guifont=Monospace\ 11
     set guiheadroom=0
 endif
 
