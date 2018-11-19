@@ -15,3 +15,5 @@ ln -s $DIR/polybar $HOME/.config/polybar
 ln -s $DIR/i3 $HOME/.config/i3
 
 ln -s $DIR/dunst $HOME/.config/dunst
+
+ln -s $DIR/zshrc $HOME/.zshrc
