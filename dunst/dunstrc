@@ -6,7 +6,7 @@ font = Monospace 10
 #   <i>italic</i>
 #   <s>strikethrough</s>
 #   <u>underline</u>
-allow_markup = yes
+markup = yes
 
 # The format of the message.  Possible variables are:
 #   %a  appname
@@ -59,7 +59,7 @@ ignore_newline = no
 # the top and down respectevly.
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
-geometry = "250x50-40+40"
+geometry = "250x50-15+65"
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -140,11 +140,10 @@ browser = /usr/bin/firefox -new-tab
 icon_position = off
 
 # Paths to default icons.
-icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-[frame]
-width = 1
-color = "#ebdbb2"
+frame_width = 5
+frame_color = "#434C5E"
 
 [shortcuts]
 
@@ -170,18 +169,19 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-foreground = "#ebdbb2"
-background = "#32302f"
+foreground = "#D8DEE9"
+background = "#3E3440"
 timeout = 3
 
 [urgency_normal]
-foreground = "#ebdbb2"
-background = "#32302f"
+foreground = "#D8DEE9"
+background = "#2E3440"
 timeout = 3
 
 [urgency_critical]
-foreground = "#ebdbb2"
-background = "#32302f"
+foreground = "#D8DEE9"
+background = "#2E3440"
+frame_color = "#ECEFF4"
 timeout = 3
 
 
