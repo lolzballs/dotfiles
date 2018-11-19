@@ -6,7 +6,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'arcticicestudio/nord-vim'
-Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
+Plugin 'machakann/vim-highlightedyank'
 
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
@@ -61,12 +62,14 @@ if has('gui_running')
     set guiheadroom=0
 endif
 
-let g:airline_powerline_fonts = 1
 set incsearch
 set laststatus=2
 set relativenumber
 set number
 
 colorscheme nord
+let g:lightline = {
+    \ 'colorscheme': 'nord'
+    \ }
 set background=dark
 
