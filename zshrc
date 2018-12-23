@@ -16,8 +16,6 @@ autoload -U complist compinit colors vcs_info
 colors
 compinit
 
-# Report command running time if it is more than 3 seconds
-REPORTTIME=3
 # Keep a lot of history
 HISTFILE=~/.zhistory
 HISTSIZE=5000
