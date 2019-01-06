@@ -76,7 +76,6 @@ export TERM=xterm-256color
 # Customize to your needs...
 alias vi=vim
 alias xc="xclip -selection clipboard"
-alias matlab="matlab -nodesktop -nosplash"
 alias ls='ls --color=auto'
 alias rm='rm -i'
 
