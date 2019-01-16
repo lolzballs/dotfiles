@@ -2,6 +2,7 @@ exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPL
 exec udiskie -2
 exec compton
 exec nm-applet
+exec thunar --daemon
 exec feh --bg-fill /home/bcheng/usr/photos/wallpaper.jpg
 exec xss-lock -- /home/bcheng/bin/i3lock-fancy
 exec xrdb /home/bcheng/.Xresources

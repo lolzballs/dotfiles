@@ -12,6 +12,7 @@ Plugin 'machakann/vim-highlightedyank'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'justinmk/vim-sneak'
 
 Plugin 'rust-lang/rust.vim'
 

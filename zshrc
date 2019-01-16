@@ -78,5 +78,6 @@ alias vi=vim
 alias xc="xclip -selection clipboard"
 alias ls='ls --color=auto'
 alias rm='rm -i'
+alias mv='mv -i'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
