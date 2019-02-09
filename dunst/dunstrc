@@ -170,7 +170,7 @@ context = ctrl+shift+period
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
 foreground = "#D8DEE9"
-background = "#3E3440"
+background = "#2E3440"
 timeout = 3
 
 [urgency_normal]
@@ -180,8 +180,7 @@ timeout = 3
 
 [urgency_critical]
 foreground = "#D8DEE9"
-background = "#2E3440"
-frame_color = "#ECEFF4"
+background = "#EBCB8B"
 timeout = 3
 
 
