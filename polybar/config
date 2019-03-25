@@ -57,8 +57,8 @@ monitor=${env:MONITOR}
 # monitor = ${env:MONITOR:DisplayPort-2}
 
 modules-left = i3 xwindow
-modules-center =
-modules-right = systemspace memory cpu battery pulseaudio date
+modules-center = 
+modules-right = memory cpu battery pulseaudio date
 
 tray-position = right
 tray-padding = 2
@@ -73,6 +73,13 @@ format-foreground = ${colors.nord4}
 type = internal/xwindow
 inherit = module/theme
 label = %title:0:30:...%
+
+[module/spotify]
+type = custom/script
+inherit = module/theme
+exec = { playerctl metadata title; echo -n " - "; playerctl metadata artist; }
+interval = 2
+
 
 [module/i3]
 type = internal/i3

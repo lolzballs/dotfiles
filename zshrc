@@ -39,22 +39,34 @@ zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git*' formats "%F{blue}%b%f %u%c"
 
 _setup_ps1() {
-  vcs_info
-  GLYPH="❯"
-  [ "x$KEYMAP" = "xvicmd" ] && GLYPH="❮"
-  PS1=" %(?.%F{blue}.%F{red})$GLYPH%f %(1j.%F{cyan}[%j]%f .)%F{blue}%~%f %(!.%F{red}#%f .)"
-  RPROMPT="$vcs_info_msg_0_"
+    vcs_info
+    GLYPH="❯"
+    [ "x$KEYMAP" = "xvicmd" ] && GLYPH="❮"
+    PS1=" %(?.%F{blue}.%F{red})$GLYPH%f %(1j.%F{cyan}[%j]%f .)%F{blue}%~%f %(!.%F{red}#%f .)"
+    RPROMPT="$vcs_info_msg_0_"
 }
 _setup_ps1
 
+chpwd() {
+    [[ -t 1 ]] || return
+    case $TERM in
+        sun-cmd) print -Pn "\e]l%~\e\\"
+            ;;
+        *xterm*|rxvt|(dt|k|E)term) print -Pn "\e]2;%~\a"
+            ;;
+    esac
+}
+
+chpwd
+
 # Vi mode
 zle-keymap-select () {
- _setup_ps1
-  zle reset-prompt
+    _setup_ps1
+    zle reset-prompt
 }
 zle -N zle-keymap-select
 zle-line-init () {
-  zle -K viins
+    zle -K viins
 }
 zle -N zle-line-init
 bindkey -v

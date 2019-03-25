@@ -29,7 +29,12 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 Plugin 'junegunn/goyo.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plugin 'tomlion/vim-solidity'
 
 call vundle#end()
 
@@ -47,12 +52,30 @@ vnoremap <silent> <leader>y "+y<CR>
 vnoremap <silent> <leader>d "+d<CR>
 nnoremap <silent> <leader>p "+p<CR>
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'  
-let g:ycm_rust_src_path = '/home/bcheng/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'pyls',
+                \ 'cmd': {server_info->['pyls']},
+                \ 'whitelist': ['python'],
+                \ })
+endif
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+                \ 'name': 'rls',
+                \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
+                \ 'whitelist': ['rust'],
+                \ })
+endif
+
+
 
 let g:rustfmt_autosave = 1
 
 let g:vimtex_view_method = 'zathura'
+let g:tex_flavor='latex'
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 let g:ctrlp_custom_ignore = 'node_modules\|target'
 
