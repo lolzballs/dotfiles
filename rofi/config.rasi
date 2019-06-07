@@ -2,3 +2,4 @@ configuration {
     modi: "drun";
     theme: "nord";
 }
+

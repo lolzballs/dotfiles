@@ -1,19 +1,20 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -s $DIR/vim $HOME/.vim
-ln -s $DIR/vimrc $HOME/.vimrc
+ln -svn $DIR/vim $HOME/.vim
+ln -svn $DIR/vimrc $HOME/.vimrc
+ln -svn $DIR/zshrc $HOME/.zshrc
 
-ln -s $DIR/Xresources $HOME/.Xresources
-xrdb $HOME/.Xresources
+ln -svn $DIR/compton.conf $HOME/.config/compton.conf
 
-ln -s $DIR/compton.conf $HOME/.config/compton.conf
+ln -svn $DIR/termite $HOME/.config/termite
 
-ln -s $DIR/termite $HOME/.config/termite
+ln -svn $DIR/polybar $HOME/.config/polybar
 
-ln -s $DIR/polybar $HOME/.config/polybar
+ln -svn $DIR/i3 $HOME/.config/i3
 
-ln -s $DIR/i3 $HOME/.config/i3
+ln -svn $DIR/dunst $HOME/.config/dunst
 
-ln -s $DIR/dunst $HOME/.config/dunst
+ln -svn $DIR/rofi $HOME/.config/rofi
 
-ln -s $DIR/zshrc $HOME/.zshrc
+ln -svn $DIR/sway $HOME/.config/sway
+
