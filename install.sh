@@ -17,4 +17,5 @@ ln -svn $DIR/dunst $HOME/.config/dunst
 ln -svn $DIR/rofi $HOME/.config/rofi
 
 ln -svn $DIR/sway $HOME/.config/sway
+ln -svn $DIR/waybar $HOME/.config/waybar
 

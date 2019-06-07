@@ -1,0 +1,56 @@
+{
+    "layer": "top",
+    "height": 32,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["memory", "cpu", "battery", "pulseaudio", "clock", "tray"],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 20
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "  {:%a - %Y-%m-%d - %H:%M:%S}",
+        "interval": 1
+    },
+    "memory": {
+        "format": "   {used:.2f} Gb"
+    },
+    "cpu": {
+        "format": "   {usage}%"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}% ",
+        "format-muted": "  {volume}%",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "default": ["", "", ""]
+        },
+        "tooltip": false,
+        "on-click": "pactl set-sink-mute 0 toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume 0 +0.1%",
+        "on-scroll-down": "pactl set-sink-volume 0 -0.1%"
+    }
+}
+
