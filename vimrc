@@ -1,42 +1,32 @@
 set nocompatible
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin("~/.vim/bundle")
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'machakann/vim-highlightedyank'
 
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'justinmk/vim-sneak'
 
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'justinmk/vim-sneak'
+Plug 'rust-lang/rust.vim'
 
-Plugin 'rust-lang/rust.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
-Plugin 'mattn/emmet-vim'
-Plugin 'posva/vim-vue'
+Plug 'lervag/vimtex'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
-Plugin 'leafgarland/typescript-vim'
+Plug 'junegunn/goyo.vim'
 
-Plugin 'lervag/vimtex'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plug 'neoclide/coc.nvim', {'tag':'*', 'do': './install.sh'}
 
-Plugin 'junegunn/goyo.vim'
-
-Plugin 'prabirshrestha/async.vim'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-
-Plugin 'tomlion/vim-solidity'
-
-call vundle#end()
+call plug#end()
 
 filetype plugin indent on
 syntax on
@@ -52,29 +42,15 @@ vnoremap <silent> <leader>y "+y<CR>
 vnoremap <silent> <leader>d "+d<CR>
 nnoremap <silent> <leader>p "+p<CR>
 
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'pyls',
-                \ 'cmd': {server_info->['pyls']},
-                \ 'whitelist': ['python'],
-                \ })
-endif
-
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'rls',
-                \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-                \ 'whitelist': ['rust'],
-                \ })
-endif
-
-
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+imap <c-space> <Plug>(asyncomplete_force_refresh)
 
 let g:rustfmt_autosave = 1
 
 let g:vimtex_view_method = 'zathura'
 let g:tex_flavor='latex'
-set conceallevel=1
 let g:tex_conceal='abdmg'
 
 let g:ctrlp_custom_ignore = 'node_modules\|target'
