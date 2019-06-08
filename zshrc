@@ -71,6 +71,20 @@ zle-line-init () {
 zle -N zle-line-init
 bindkey -v
 
+#
+# Browser
+#
+
+export MOZ_ENABLE_WAYLAND=1
+export BROWSER=firefox
+
+
+eval $( dircolors )
+
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
 # Common emacs bindings for vi mode
 bindkey '\e[3~'   delete-char
 bindkey '^A'      beginning-of-line
@@ -84,6 +98,8 @@ bindkey '\e[7~'      beginning-of-line
 bindkey '\e[8~' end-of-line
 
 export TERM=xterm-256color
+
+export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 # Customize to your needs...
 alias vi=vim
