@@ -19,3 +19,5 @@ ln -svn $DIR/rofi $HOME/.config/rofi
 ln -svn $DIR/sway $HOME/.config/sway
 ln -svn $DIR/waybar $HOME/.config/waybar
 
+ln -svn $DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
+
