@@ -75,7 +75,6 @@ bindkey -v
 # Browser
 #
 
-export MOZ_ENABLE_WAYLAND=1
 export BROWSER=firefox
 
 
@@ -109,6 +108,4 @@ alias rm='rm -i'
 alias mv='mv -i'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-. /home/bcheng/opt/miniconda/etc/profile.d/conda.sh
 

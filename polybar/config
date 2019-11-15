@@ -28,9 +28,6 @@ width = 100%
 height = 32
 offset-x = 0
 offset-y = 0
-border-left-size = 16
-border-right-size = 16
-border-top-size = 16
 
 background = ${colors.nord0}
 foreground = ${colors.nord4}
