@@ -1,8 +1,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-ln -svn $DIR/vim $HOME/.vim
-ln -svn $DIR/vimrc $HOME/.vimrc
 ln -svn $DIR/zshrc $HOME/.zshrc
+
+ln -svn $DIR/nvim $HOME/.config/nvim
 
 ln -svn $DIR/compton.conf $HOME/.config/compton.conf
 

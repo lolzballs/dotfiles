@@ -80,8 +80,8 @@ export BROWSER=firefox
 
 eval $( dircolors )
 
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 
 # Common emacs bindings for vi mode
@@ -101,7 +101,8 @@ export TERM=xterm-256color
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
 # Customize to your needs...
-alias vi=vim
+alias vi=nvim
+alias vim=nvim
 alias xc="xclip -selection clipboard"
 alias ls='ls --color=auto'
 alias rm='rm -i'
