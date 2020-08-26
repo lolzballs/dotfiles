@@ -44,14 +44,11 @@ module-margin-left = 0
 module-margin-right = 1
 
 font-0 = Monospace:pixelsize=11;2
-font-1 = Font\ Awesome:pixelsize=11;2
+font-1 = FontAwesome5Free:style=Solid:pixelsize=11;2
+font-2 = FontAwesome5Brands:style=Regular:pixelsize=11;2
 
 [bar/main]
 inherit = bar/base
-monitor=${env:MONITOR}
-# monitor = ${env:MONITOR:eDP-1}
-# monitor-fallback = ${env:MONITOR:eDP-1-1}
-# monitor = ${env:MONITOR:DisplayPort-2}
 
 modules-left = i3 xwindow
 modules-center = 
@@ -118,7 +115,7 @@ label-mounted-background = ${self.format-background}
 type = internal/cpu
 inherit = module/theme
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 label = %percentage%%
 
 [module/memory]

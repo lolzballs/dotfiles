@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: #2E3440;
+    background-color: rgba(46, 52, 64, 0.8);
     color: #D8DEE9;
 }
 
@@ -19,7 +19,7 @@ window#waybar {
 #workspaces button:hover {
     box-shadow: inherit;
     text-shadow: inherit;
-    background-color: transparent;
+    background-color: inherit;
 }
 
 #workspaces button.focused {

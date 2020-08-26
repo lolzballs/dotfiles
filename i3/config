@@ -1,13 +1,10 @@
 exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
-exec udiskie -2
-exec compton
-exec nm-applet
-exec thunar --daemon
-exec feh --bg-fill /home/bcheng/usr/photos/wallpaper.jpg
-exec xss-lock -- /home/bcheng/bin/i3lock-fancy
-exec xrdb /home/bcheng/.Xresources
 
-exec_always --no-startup-id /home/bcheng/.config/polybar/launch.sh
+exec_always --no-startup-id xrandr --rate 144
+exec_always --no-startup-id dunst
+exec_always --no-startup-id picom
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale $HOME/usr/photos/wallpaper.jpg
 
 # Mod4 = Win
 set $mod Mod4
@@ -197,9 +194,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym XF86AudioMute exec pamixer -t
-bindsym XF86AudioRaiseVolume exec pamixer -i 2
-bindsym XF86AudioLowerVolume exec pamixer -d 2
+bindsym XF86AudioMute exec "pactl -- set-sink-mute @DEFAULT_SINK@ toggle"
+bindsym XF86AudioRaiseVolume exec "pactl -- set-sink-volume @DEFAULT_SINK@ +5%"
+bindsym XF86AudioLowerVolume exec "pactl -- set-sink-volume @DEFAULT_SINK@ -5%"
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause

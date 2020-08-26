@@ -66,6 +66,11 @@ if has('gui_running')
     set guiheadroom=0
 endif
 
+augroup project
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+augroup END
+
 set incsearch
 set laststatus=2
 set relativenumber
