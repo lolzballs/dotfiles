@@ -88,6 +88,8 @@ export TERM=xterm-256color
 
 export LESS='-F -g -i -M -R -S -w -X -z-4'
 
+export FZF_DEFAULT_COMMAND='rg --files'
+
 # Customize to your needs...
 alias vi=nvim
 alias vim=nvim
