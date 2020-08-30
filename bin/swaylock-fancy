@@ -12,7 +12,7 @@ grim /tmp/screenshot.png
 ffmpeg -loglevel quiet -y -i /tmp/screenshot.png -vf 'gblur=sigma=8' /tmp/screenshotblur.png
 rm /tmp/screenshot.png
 
-swaylock -i /tmp/screenshotblur.png
+swaylock -f -i /tmp/screenshotblur.png
 rm /tmp/screenshotblur.png
 
 reset
