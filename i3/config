@@ -21,6 +21,8 @@ gaps inner 8
 gaps outer 8
 smart_borders no_gaps
 for_window [class="^.*"] border pixel 5
+for_window [class="zoom"] floating enable
+for_window [class="MATLAB R*" title="^Fig"] floating enable
 
 set $nord0 #2E3440
 set $nord1 #3B4252
