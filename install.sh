@@ -1,6 +1,6 @@
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+#!/bin/bash
 
-ln -svn $DIR/zshrc $HOME/.zshrc
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -svn $DIR/nvim $HOME/.config/nvim
 
@@ -22,4 +22,6 @@ ln -svn $DIR/waybar $HOME/.config/waybar
 ln -svn $DIR/emacs $HOME/.emacs.d
 
 ln -svn $DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
+
+ln -svn $DIR/fish $HOME/.config/fish
 

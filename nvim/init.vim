@@ -15,7 +15,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'lervag/vimtex'
 
-Plug 'neoclide/coc.nvim', {'tag':'*', 'branch': 'release'}
+Plug 'dag/vim-fish'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Language/plugin stuff
