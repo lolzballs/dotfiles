@@ -12,7 +12,9 @@ end
 
 set fish_greeting
 
-source $HOME/.config/fish/local_(hostname).fish
+if test -f $HOME/.config/fish/local_(hostname).fish
+    source $HOME/.config/fish/local_(hostname).fish
+end
 
 if test -d $HOME/opt/miniconda
 # >>> conda initialize >>>
