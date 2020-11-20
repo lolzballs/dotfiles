@@ -12,6 +12,8 @@ end
 
 set fish_greeting
 
+source $HOME/.config/fish/local_(hostname).fish
+
 if test -d $HOME/opt/miniconda
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
