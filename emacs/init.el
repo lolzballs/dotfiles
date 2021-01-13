@@ -56,6 +56,14 @@
 
 (use-package org)
 
+(use-package evil-org
+  :ensure t
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
 (setq debug-on-error nil)
 (setq debug-on-quit nil)
 
