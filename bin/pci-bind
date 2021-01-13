@@ -1,0 +1,43 @@
+#!/bin/fish
+
+if test (count $argv) -ne 2
+    echo 'Usage: pci-bind <driver> <pciaddr>'
+    exit 1
+end
+
+set req_driver $argv[1]
+set pci_addr $argv[2]
+
+set dev_paths /sys/bus/pci/devices/$pci_addr.*
+
+function extract_error
+    echo (string lower (string split ': ' "$argv")[-1])
+end
+
+function unbind
+    for dev in $dev_paths
+        if test -e $dev/driver
+            echo (basename $dev) | tee $dev/driver/unbind > /dev/null 2>| read output
+
+            if test -n "$output"
+                echo "$dev: error unbinding" (extract_error "$output")
+            end
+        else
+            echo "$dev: already unbound"
+        end
+    end
+end
+
+function bind
+    for dev in $dev_paths
+        echo (basename $dev) | tee /sys/bus/pci/drivers/$req_driver/bind > /dev/null 2>| read output
+
+        if test -n "$output"
+            set error_message (string split ': ' "$output")[-1]
+            echo "$dev: error binding" (extract_error "$output")
+        end
+    end
+end
+
+unbind $dev_paths
+bind $req_driver $dev_paths
