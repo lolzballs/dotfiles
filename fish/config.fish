@@ -1,3 +1,17 @@
+set -gx EDITOR "nvim"
+set -gx BROWSER "firefox"
+
+set -gx QT_QPA_PLATFORMTHEME "qt5ct"
+set -gx CARGO_TARGET_DIR "$HOME/.cache/cargo"
+set -gx RUSTFLAGS "-C target-cpu=native"
+set -gx LESS "-F -g -i -M -R -S -w -X -z-4"
+set -gx GOPATH $HOME/.cache/go
+
+set -gx PATH $HOME/bin $PATH
+set -gx PATH $HOME/.cargo/bin $PATH
+set -gx PATH $HOME/.npm-global/bin $PATH
+set -gx PATH $HOME/.local/bin $PATH
+
 abbr -a vi 'nvim'
 abbr -a vim 'nvim'
 
