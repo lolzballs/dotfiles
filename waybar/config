@@ -48,10 +48,10 @@
             "default": ["", "", ""]
         },
         "tooltip": false,
-        "on-click": "pactl set-sink-mute 0 toggle",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume 0 +0.1%",
-        "on-scroll-down": "pactl set-sink-volume 0 -0.1%"
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +0.1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -0.1%"
     }
 }
 
