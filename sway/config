@@ -30,6 +30,7 @@ exec swayidle -w \
 
 exec --no-startup-id 'nm-applet --indicator'
 exec --no-startup-id 'mako'
+exec --no-startup-id 'dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE'
 
 exec_always {
     gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
