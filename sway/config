@@ -65,6 +65,8 @@ input type:touchpad {
     scroll_factor 0.5
 }
 
+for_window [class="MATLAB R*" title="^Fig"] floating enable
+
 # Screenshot
 bindsym $mod+Shift+w exec 'grim -g "$(slurp)" - | wl-copy'
 bindsym $mod+n exec nautilus
