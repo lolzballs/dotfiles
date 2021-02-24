@@ -18,6 +18,7 @@ Plug 'lervag/vimtex'
 Plug 'dag/vim-fish'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " Language/plugin stuff
