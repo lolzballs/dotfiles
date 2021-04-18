@@ -33,8 +33,8 @@ exec --no-startup-id 'mako'
 exec --no-startup-id 'dbus-update-activation-environment --systemd DISPLAY MOZ_DBUS_REMOTE'
 
 exec_always {
-    gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
-    gsettings set org.gnome.desktop.interface icon-theme 'Numix'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
 }
 
 gaps inner 8
