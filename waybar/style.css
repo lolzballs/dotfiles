@@ -9,6 +9,7 @@
 window#waybar {
     background-color: rgba(46, 52, 64, 0.8);
     color: #D8DEE9;
+    transition: none;
 }
 
 #workspaces button {
@@ -17,9 +18,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
-    background-color: inherit;
+    background: inherit;
+    border: inherit;
 }
 
 #workspaces button.focused {
