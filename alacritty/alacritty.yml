@@ -60,5 +60,8 @@ colors:
     cyan: '#6d96a5'
     white: '#aeb3bb'
 
+env:
+  TERM: xterm-256color
+
 key_bindings:
     - { key: T, mods: Control|Shift, action: SpawnNewInstance }
