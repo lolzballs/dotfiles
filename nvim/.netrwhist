@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/bcheng/.ssh'
+let g:netrw_dirhist_2='/usr/share/vulkan/icd.d'
+let g:netrw_dirhist_1='/home/bcheng/usr/livres/ece421/assignment2/figures'
+let g:netrw_dirhist_0='/home/bcheng/dotfiles/nvim'
+let g:netrw_dirhist_9='/home/bcheng/.config/systemd/user/default.target.wants'
+let g:netrw_dirhist_8='/home/bcheng/usr/code/website/public'
+let g:netrw_dirhist_7='/mnt/cyberpunk/mesa/usr/share/vulkan/icd.d'
+let g:netrw_dirhist_6='/mnt/cyberpunk/mesa/usr/share/vulkan'
+let g:netrw_dirhist_5='/mnt/cyberpunk/mesa/usr/share'
+let g:netrw_dirhist_4='/mnt/cyberpunk/mesa/usr/share/vulkan/explicit_layer.d'
