@@ -3,7 +3,7 @@
     "height": 32,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["memory", "cpu", "battery", "pulseaudio", "clock", "tray"],
+    "modules-right": ["memory", "cpu", "battery", "pulseaudio", "custom/iwd", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -36,6 +36,10 @@
         "format-charging": " {capacity}% {time}",
         "format-icons": ["", "", "", "", ""]
     },
+	"custom/iwd": {
+		"exec": "iw wlan0 info | grep -Po '(?<=ssid ).*'",
+		"interval": 5
+	},
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{icon} {volume}%",

@@ -28,7 +28,7 @@ window#waybar {
     border-bottom: 2px solid #88C0D0;
 }
 
-#window, #memory, #cpu, #battery, #pulseaudio, #clock, #tray {
+#window, #memory, #cpu, #battery, #pulseaudio, #clock, #tray, #custom-iwd {
     padding: 0 10px;
     margin: 0 5px;
     color: #D8DEE9;
