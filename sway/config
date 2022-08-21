@@ -34,6 +34,7 @@ exec --no-startup-id 'dbus-update-activation-environment --systemd MOZ_DBUS_REMO
 exec_always {
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
     gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 }
 
 gaps inner 8
