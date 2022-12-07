@@ -16,25 +16,19 @@
         "spacing": 10
     },
     "clock": {
-        "format": " {:%a - %Y-%m-%d - %H:%M:%S}",
+        "format": "{:%a - %Y-%m-%d - %H:%M:%S}",
         "interval": 1
     },
     "memory": {
-        "format": " {used:.2f} GB"
+        "format": "M: {used:.2f} GB"
     },
     "cpu": {
-        "format": " {usage}%"
+        "format": "C: {usage}%"
     },
     "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}% {time}",
+        "format": "B: {capacity}% ({time})",
         "format-time": "{H:02d}:{M:02d}",
-        "format-charging": " {capacity}% {time}",
-        "format-icons": ["", "", "", "", ""]
+        "format-charging": "B: {capacity}% (charging - {time})",
     },
 	"custom/iwd": {
 		"exec": "iw wlan0 info | grep -Po '(?<=ssid ).*'",
@@ -42,15 +36,9 @@
 	},
     "pulseaudio": {
         "scroll-step": 1,
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}% ",
-        "format-muted": " {volume}%",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "default": ["", "", ""]
-        },
+        "format": "V: {volume}%",
+        "format-bluetooth": "BT: {volume}% ",
+        "format-muted": "V: {volume}% (muted)",
         "tooltip": false,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol",
