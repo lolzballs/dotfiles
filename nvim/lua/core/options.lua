@@ -10,13 +10,12 @@ vim.opt.title = true
 vim.opt.linebreak = false
 
 -- visual stuff
-vim.cmd 'colorscheme nord'
+vim.cmd 'colorscheme moonfly'
 vim.o.background = 'dark'
 -- configure lualine
 require('lualine').setup {
 	options = {
 		icons_enabled = true,
-		theme = 'nord',
 		component_separators = '',
 		section_separators = '',
 	}

@@ -1,10 +1,6 @@
 return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 
-	use {
-		'arcticicestudio/nord-vim',
-		branch = 'main',
-	}
 	use 'nvim-lualine/lualine.nvim'
 	use 'machakann/vim-highlightedyank'
 
@@ -27,4 +23,6 @@ return require('packer').startup(function()
 		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+
+	use {'bluz71/vim-moonfly-colors'}
 end)
