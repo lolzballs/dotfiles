@@ -3,6 +3,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -svn $DIR/nvim $HOME/.config/nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+	~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 ln -svn $DIR/compton.conf $HOME/.config/compton.conf
 
