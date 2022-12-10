@@ -29,12 +29,13 @@ local servers = {
 	clangd = {'--header-insertion=never'},
 }
 for lsp, args in pairs(servers) do
+	cmd = { lsp, unpack(args) }
+	if #args == 0 then
+		cmd = nil
+	end
+
 	require('lspconfig')[lsp].setup {
-		cmd = { lsp, unpack(args) },
+		cmd = cmd,
 		on_attach = on_attach,
-		flags = {
-			-- This will be the default in neovim 0.7+
-			debounce_text_changes = 150,
-		}
 	}
 end
