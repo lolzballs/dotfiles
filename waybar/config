@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 32,
+    "height": 28,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": ["memory", "cpu", "battery", "pulseaudio", "custom/iwd", "clock", "tray"],
@@ -13,7 +13,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 1
     },
     "clock": {
         "format": "{:%a - %Y-%m-%d - %H:%M:%S}",
@@ -37,7 +37,7 @@
     "pulseaudio": {
         "scroll-step": 1,
         "format": "V: {volume}%",
-        "format-bluetooth": "BT: {volume}% ",
+        "format-bluetooth": "BT: {volume}%",
         "format-muted": "V: {volume}% (muted)",
         "tooltip": false,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
