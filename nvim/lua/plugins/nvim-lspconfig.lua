@@ -27,6 +27,8 @@ local servers = {
 	pyright = {},
 	rust_analyzer = {},
 	clangd = {'--header-insertion=never'},
+	hls = {},
+	jdtls = {},
 }
 for lsp, args in pairs(servers) do
 	cmd = { lsp, unpack(args) }
