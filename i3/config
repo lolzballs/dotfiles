@@ -1,5 +1,3 @@
-exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
-
 exec_always --no-startup-id xrandr --rate 144
 exec_always --no-startup-id dunst
 exec_always --no-startup-id picom
@@ -49,7 +47,7 @@ client.urgent           $nord6		$nord11     $nord4		$nord9
 client.background       $nord3
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -57,7 +55,7 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+space exec rofi -show drun
 
-bindsym $mod+n exec thunar
+bindsym $mod+n exec pcmanfm
 
 # lock screen
 bindsym $mod+shift+b exec "sm && i3lock-fancy"
