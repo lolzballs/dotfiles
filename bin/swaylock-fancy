@@ -4,8 +4,6 @@ if pidof -x swaylock >/dev/null; then
     exit 0
 fi
 
-RESOLUTION=`xdpyinfo | awk '/dimensions/{print $2}'`
-
 trap reset SIGHUP SIGINT SIGTERM
 
 grim /tmp/screenshot.png
@@ -16,4 +14,3 @@ swaylock -f -i /tmp/screenshotblur.png
 rm /tmp/screenshotblur.png
 
 reset
-
