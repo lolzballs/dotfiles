@@ -12,6 +12,9 @@ map('n', '<C-l>', '<C-w><C-l>')
 
 -- map <C-p> to Telescope find_files function
 map('n', '<C-p>', ':Telescope find_files<CR>')
+map('n', '<leader>fg', ':Telescope live_grep<CR>')
+map('n', '<leader>fb', ':Telescope buffers<CR>')
+map('n', '<leader>fh', ':Telescope help_tags<CR>')
 
 -- diagnostics navigation
 map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
